@@ -18,27 +18,25 @@ public class MyStack<T> implements Stack<T>
 
     public boolean push(T tok)
     {
-        stk[top] = tok;
-        tok ++;
         try
         {
-            stk[21];
+            top += 1;
+            stk[top] = tok;
         }
         catch(ArrayIndexOutOfBoundsException e)
         {
-            System.out.println("Stack overFlow!");
-            return null;
+            System.out.println("Stack overFlow!");      
+            return false;
         }
     }
-    
+
     public T pop()
-    {
-        T result = (T)stk[top];
-        top -= 1;
-        return result;
+    {        
         try
         {
-            stk[-1];
+            T result = (T)stk[top];
+            top -= 1;
+            return result;
         }
         catch(ArrayIndexOutOfBoundsException e)
         {

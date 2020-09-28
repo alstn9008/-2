@@ -18,7 +18,7 @@ public class MyApp
         System.out.println("------ Pop ------");
         
         for(int n=0 ; n<4 ; n++){
-            System.out.pirntln(stringStack.pop());
+            System.out.println(stringStack.pop());
         }
         
     }
