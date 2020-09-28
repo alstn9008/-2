@@ -9,8 +9,7 @@ public class MyStack<T> implements Stack<T>
 {
     private int top;
     Object[] stk;
-    
-    
+
     public MyStack()
     {
         top = 0;
@@ -19,10 +18,17 @@ public class MyStack<T> implements Stack<T>
 
     public boolean push(T tok)
     {
-        if(top == 20)
-            return ;
         stk[top] = tok;
         tok ++;
+        try
+        {
+            stk[21];
+        }
+        catch(ArrayIndexOutOfBoundsException e)
+        {
+            System.out.println("Stack overFlow!");
+            return null;
+        }
     }
     
     public T pop()
@@ -32,7 +38,7 @@ public class MyStack<T> implements Stack<T>
         return result;
         try
         {
-            (T)stk[-1];
+            stk[-1];
         }
         catch(ArrayIndexOutOfBoundsException e)
         {
